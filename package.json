@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp compressESM",
     "build": "gulp",
-    "build-compress": "gulp compress",
-    "build-mini": "gulp obfuscate"
+    "build-obf": "gulp obfuscateESM"
   },
   "keywords": [],
   "author": "",
