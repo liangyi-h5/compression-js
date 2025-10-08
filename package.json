@@ -1,0 +1,25 @@
+{
+  "name": "compression",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "build-compress": "gulp compress",
+    "build-mini": "gulp obfuscate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "gulp": "^5.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-obfuscate": "^0.2.9",
+    "gulp-rename": "^2.1.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
