@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp compressESM",
     "build": "gulp",
-    "build-obf": "gulp obfuscateESM"
+    "build-obf": "gulp obfuscateESM",
+    "build-css": "gulp compressCSS"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +16,17 @@
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
+    "cssnano": "^7.1.1",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-obfuscate": "^0.2.9",
+    "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.1.0",
     "gulp-terser": "^2.1.0",
     "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^10.0.0"
   }
 }

@@ -5,6 +5,7 @@ const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 const obfuscate = require('gulp-obfuscate');
+const cleanCSS = require('gulp-clean-css');
 
 // 基本任务：压缩ESM JS文件
 function compressESM() {
@@ -61,6 +62,16 @@ function obfuscateESM() {
     .pipe(gulp.dest('dist'));
 }
 
+// CSS压缩任务
+function compressCSS() {
+  return gulp.src('src/**/*.css')
+    .pipe(cleanCSS({
+      level: 2 // 高级优化，输出已经是最紧凑格式
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist'));
+}
+
 // 导出任务
-export { compressESM, obfuscateESM };
+export { compressESM, obfuscateESM, compressCSS };
 export default gulp.series(compressESM, obfuscateESM);
