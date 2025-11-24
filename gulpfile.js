@@ -6,10 +6,12 @@ const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 const obfuscate = require('gulp-obfuscate');
 const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
 
 // 基本任务：压缩ESM JS文件
 function compressESM() {
   return gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())   // ★ 初始化 map
     .pipe(babel({
       presets: [
         ['@babel/preset-env', {
@@ -28,6 +30,7 @@ function compressESM() {
       toplevel: true
     }))
     .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.')) 
     .pipe(gulp.dest('dist'));
 }
 
